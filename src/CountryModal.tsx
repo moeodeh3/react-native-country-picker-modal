@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
 
 export const CountryModal = ({
   children,
-  withModal,
-  disableNativeModal,
+  withModal = true,
+  disableNativeModal = false,
+  animationType = 'slide',
   ...props
 }: ModalProps & {
   children: React.ReactNode
@@ -35,19 +36,12 @@ export const CountryModal = ({
   }, [disableNativeModal])
   if (withModal) {
     if (Platform.OS === 'web') {
-      return <Modal {...props}>{content}</Modal>
+      return <Modal {...props} animationType={animationType}>{content}</Modal>
     }
     if (disableNativeModal) {
       return null
     }
-    return <Modal {...props}>{content}</Modal>
+    return <Modal {...props} animationType={animationType} >{content}</Modal>
   }
   return content
-}
-
-CountryModal.defaultProps = {
-  animationType: 'slide',
-  animated: true,
-  withModal: true,
-  disableNativeModal: false,
 }

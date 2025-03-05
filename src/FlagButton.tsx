@@ -51,11 +51,11 @@ const FlagWithSomething = memo(
   ({
     allowFontScaling,
     countryCode,
-    withEmoji,
-    withCountryNameButton,
-    withCurrencyButton,
-    withCallingCodeButton,
-    withFlagButton,
+    withEmoji = true,
+    withCountryNameButton = false,
+    withCurrencyButton = false,
+    withCallingCodeButton = false,
+    withFlagButton = true,
     flagSize,
     placeholder,
   }: FlagWithSomethingProp) => {
@@ -66,6 +66,7 @@ const FlagWithSomething = memo(
       callingCode: '',
     })
     const { countryName, currency, callingCode } = state
+
     useEffect(() => {
       if (countryCode) {
         getCountryInfoAsync({ countryCode, translation })
@@ -123,12 +124,12 @@ export interface FlagButtonProps {
 }
 
 export const FlagButton = ({
-  allowFontScaling,
-  withEmoji,
-  withCountryNameButton,
-  withCallingCodeButton,
-  withCurrencyButton,
-  withFlagButton,
+  allowFontScaling = true,
+  withEmoji = true,
+  withCountryNameButton = false,
+  withCallingCodeButton = false,
+  withCurrencyButton = false,
+  withFlagButton = true,
   countryCode,
   containerButtonStyle,
   onOpen,
@@ -160,12 +161,4 @@ export const FlagButton = ({
       </View>
     </TouchableOpacity>
   )
-}
-
-FlagButton.defaultProps = {
-  withEmoji: true,
-  withCountryNameButton: false,
-  withCallingCodeButton: false,
-  withCurrencyButton: false,
-  withFlagButton: true,
 }

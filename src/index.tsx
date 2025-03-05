@@ -65,16 +65,3 @@ Main.defaultProps = {
 }
 
 export default Main
-export {
-  getCountriesAsync as getAllCountries,
-  getCountryCallingCodeAsync as getCallingCode,
-} from './CountryService'
-export { CountryModal } from './CountryModal'
-export { DARK_THEME, DEFAULT_THEME } from './CountryTheme'
-export { CountryFilter } from './CountryFilter'
-export { CountryList } from './CountryList'
-export { FlagButton } from './FlagButton'
-export { Flag } from './Flag'
-export { HeaderModal } from './HeaderModal'
-export { CountryModalProvider } from './CountryModalProvider'
-export * from './types'

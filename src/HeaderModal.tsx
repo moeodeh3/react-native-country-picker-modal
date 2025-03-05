@@ -1,3 +1,4 @@
+
 import React, { ReactNode } from 'react'
 import {
   View,
@@ -25,16 +26,16 @@ interface HeaderModalProps {
   onClose(): void
   renderFilter(props: HeaderModalProps): ReactNode
 }
-export const HeaderModal = (props: HeaderModalProps) => {
-  const {
-    withFilter,
-    withCloseButton,
-    closeButtonImage,
-    closeButtonStyle,
-    closeButtonImageStyle,
-    onClose,
-    renderFilter,
-  } = props
+
+export const HeaderModal = ({
+  withFilter = false,
+  withCloseButton = true,
+  closeButtonImage,
+  closeButtonStyle,
+  closeButtonImageStyle,
+  onClose,
+  renderFilter,
+}: HeaderModalProps) => {
   return (
     <View style={styles.container}>
       {withCloseButton && (
@@ -45,11 +46,7 @@ export const HeaderModal = (props: HeaderModalProps) => {
           onPress={() => onClose()}
         />
       )}
-      {withFilter && renderFilter(props)}
+      {withFilter && renderFilter({ withFilter, withCloseButton, closeButtonImage, closeButtonStyle, closeButtonImageStyle, onClose, renderFilter })}
     </View>
   )
-}
-
-HeaderModal.defaultProps = {
-  withCloseButton: true,
 }

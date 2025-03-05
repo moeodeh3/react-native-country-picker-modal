@@ -45,9 +45,11 @@ interface FlagType {
 const ImageFlag = memo(({ countryCode, flagSize }: FlagType) => {
   const { getImageFlagAsync } = useContext()
   const asyncResult = useAsync(getImageFlagAsync, [countryCode])
+
   if (asyncResult.loading) {
     return <ActivityIndicator size={'small'} />
   }
+
   return (
     <Image
       resizeMode={'contain'}
@@ -67,6 +69,7 @@ const EmojiFlag = memo(({ countryCode, flagSize }: FlagType) => {
   if (asyncResult.loading) {
     return <ActivityIndicator size={'small'} />
   }
+
   return (
     <Text
       style={[styles.emojiFlag, { fontSize: flagSize }]}
@@ -79,8 +82,8 @@ const EmojiFlag = memo(({ countryCode, flagSize }: FlagType) => {
 
 export const Flag = ({
   countryCode,
-  withEmoji,
-  withFlagButton,
+  withEmoji = true,
+  withFlagButton = true,
   flagSize,
 }: FlagType) =>
   withFlagButton ? (
@@ -92,8 +95,3 @@ export const Flag = ({
       )}
     </View>
   ) : null
-
-Flag.defaultProps = {
-  withEmoji: true,
-  withFlagButton: true,
-}
