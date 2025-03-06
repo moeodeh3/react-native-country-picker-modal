@@ -16,7 +16,7 @@ var styles = StyleSheet.create({
   }
 });
 var CloseButtonAndroid = function CloseButtonAndroid(props) {
-  var closeImage = require('./assets/images/close.android.png');
+  var closeImage = require('../assets/images/close.android.png');
   if (props.image) {
     closeImage = props.image;
   }
@@ -39,7 +39,7 @@ var CloseButtonAndroid = function CloseButtonAndroid(props) {
   });
 };
 var CloseButtonIOS = function CloseButtonIOS(props) {
-  var closeImage = require('./assets/images/close.ios.png');
+  var closeImage = require('../assets/images/close.ios.png');
   if (props.image) {
     closeImage = props.image;
   }

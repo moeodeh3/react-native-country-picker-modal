@@ -24,7 +24,7 @@ export const loadDataAsync = ((data) => (dataType = FlagType.EMOJI) => {
                 break;
             default:
                 if (!data.emojiCountries) {
-                    data.emojiCountries = require('./assets/data/countries-emoji.json');
+                    data.emojiCountries = require('../assets/data/countries-emoji.json');
                     resolve(data.emojiCountries);
                 }
                 else {

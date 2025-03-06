@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
 });
 const CloseButtonAndroid = (props) => {
-    let closeImage = require('./assets/images/close.android.png');
+    let closeImage = require('../assets/images/close.android.png');
     if (props.image) {
         closeImage = props.image;
     }
@@ -29,7 +29,7 @@ const CloseButtonAndroid = (props) => {
                     ] }) }) }) }));
 };
 const CloseButtonIOS = (props) => {
-    let closeImage = require('./assets/images/close.ios.png');
+    let closeImage = require('../assets/images/close.ios.png');
     if (props.image) {
         closeImage = props.image;
     }
