@@ -21,7 +21,7 @@ export declare const DEFAULT_COUNTRY_CONTEXT: {
     getCountriesAsync: (flagType: import("./types").FlagType, translation?: TranslationLanguageCode, region?: import("./types").Region, subregion?: import("./types").Subregion, countryCodes?: import("./types").CountryCode[], excludeCountries?: import("./types").CountryCode[], preferredCountries?: import("./types").CountryCode[], withAlphaFilter?: boolean) => Promise<import("./types").Country[]>;
     getCountryCallingCodeAsync: (countryCode: import("./types").CountryCode) => Promise<string | undefined>;
     getCountryCurrencyAsync: (countryCode: import("./types").CountryCode) => Promise<string | undefined>;
-    search: (filter?: string, data?: import("./types").Country[], options?: Fuse.FuseOptions<import("./types").Country>) => import("./types").Country[] | import("fuse.js").FuseResult<import("./types").Country>[];
+    search: (filter?: string, data?: import("./types").Country[], options?: import("fuse.js").IFuseOptions<import("./types").Country>) => import("./types").Country[] | import("fuse.js").FuseResult<import("./types").Country>[];
     getLetters: (countries: import("./types").Country[]) => string[];
     getCountryInfoAsync: ({ countryCode, translation, }: {
         countryCode: import("./types").CountryCode;

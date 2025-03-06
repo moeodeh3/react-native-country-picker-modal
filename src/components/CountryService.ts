@@ -8,7 +8,7 @@ import {
   Region,
   Subregion,
 } from './types'
-import Fuse from 'fuse.js'
+import Fuse, { IFuseOptions } from 'fuse.js'
 
 const imageJsonUrl =
   'https://xcarpentier.github.io/react-native-country-picker-modal/countries/'
@@ -16,8 +16,8 @@ const imageJsonUrl =
 type CountryMap = { [key in CountryCode]: Country }
 
 interface DataCountry {
-  emojiCountries?: CountryMap
-  imageCountries?: CountryMap
+  emojiCountries?: CountryMap | undefined
+  imageCountries?: CountryMap | undefined
 }
 const localData: DataCountry = {
   emojiCountries: undefined,
@@ -200,7 +200,7 @@ let fuse: Fuse<Country>
 export const search = (
   filter: string = '',
   data: Country[] = [],
-  options: Fuse.FuseOptions<Country> = DEFAULT_FUSE_OPTION,
+  options: IFuseOptions<Country> = DEFAULT_FUSE_OPTION,
 ) => {
   if (data.length === 0) {
     return []

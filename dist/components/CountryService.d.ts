@@ -1,4 +1,5 @@
 import { CountryCode, Country, TranslationLanguageCode, FlagType, Region, Subregion } from './types';
+import { IFuseOptions } from 'fuse.js';
 type CountryMap = {
     [key in CountryCode]: Country;
 };
@@ -9,7 +10,7 @@ export declare const getCountryNameAsync: (countryCode?: CountryCode, translatio
 export declare const getCountryCallingCodeAsync: (countryCode: CountryCode) => Promise<string | undefined>;
 export declare const getCountryCurrencyAsync: (countryCode: CountryCode) => Promise<string | undefined>;
 export declare const getCountriesAsync: (flagType: FlagType, translation?: TranslationLanguageCode, region?: Region, subregion?: Subregion, countryCodes?: CountryCode[], excludeCountries?: CountryCode[], preferredCountries?: CountryCode[], withAlphaFilter?: boolean) => Promise<Country[]>;
-export declare const search: (filter?: string, data?: Country[], options?: Fuse.FuseOptions<Country>) => Country[] | import("fuse.js").FuseResult<Country>[];
+export declare const search: (filter?: string, data?: Country[], options?: IFuseOptions<Country>) => Country[] | import("fuse.js").FuseResult<Country>[];
 export declare const getLetters: (countries: Country[]) => string[];
 export interface CountryInfo {
     countryName: string;
