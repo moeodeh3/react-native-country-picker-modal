@@ -8,6 +8,8 @@ import alias from '@rollup/plugin-alias'
 import copy from 'rollup-plugin-copy'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { babel } from '@rollup/plugin-babel'
+import json from "@rollup/plugin-json";
+
 
 const getFormatConfig = (format) => {
   const pkgPath = path.join(process.cwd(), 'package.json')
@@ -104,6 +106,8 @@ const getFormatConfig = (format) => {
         fileName: 'assets/fonts/[name].[hash][extname]',
       }),
       // Copy fonts from src to dist
+      json(),
+      
       copy({
         targets: [
           {
