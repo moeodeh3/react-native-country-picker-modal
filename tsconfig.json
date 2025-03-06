@@ -1,48 +1,28 @@
 {
-  "include": [
-    "src",
-    "App.tsx",
-    "./typings.d.ts"
-  ],
+  "extends": "@tsconfig/node16-strictest/tsconfig.json",
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "composite": true,
     "declaration": true,
-    "outDir": "./lib",
-    "strict": true,
-    "removeComments": true,
-    "jsx": "react",
-    "target": "es2019",
-    "module": "es6",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "experimentalDecorators": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "importHelpers": false,
-    "alwaysStrict": true,
-    "forceConsistentCasingInFileNames": true,
-    "strictFunctionTypes": true,
+    "declarationMap": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "noPropertyAccessFromIndexSignature": false,
     "resolveJsonModule": true,
-    "noFallthroughCasesInSwitch": true,
-    "strictPropertyInitialization": false,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./@types"
-    ]
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "tsBuildInfoFile": "./.cache/.tsbuildinfo",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "esModuleInterop": true
   },
-  "exclude": [
-    "node_modules"
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.json"
   ],
-  "extends": "expo/tsconfig.base"
+  "exclude": ["**/__tests__/**/*", "**/__fixtures__/**/*"],
 }
