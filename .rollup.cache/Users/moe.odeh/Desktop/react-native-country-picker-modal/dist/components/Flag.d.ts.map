@@ -1,0 +1,1 @@
+{"version":3,"file":"Flag.d.ts","sourceRoot":"","sources":["../../src/components/Flag.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,WAAW,EAAE,MAAM,SAAS,CAAA;AAmCrC,UAAU,QAAQ;IAChB,WAAW,EAAE,WAAW,CAAA;IACxB,SAAS,CAAC,EAAE,OAAO,CAAA;IACnB,cAAc,CAAC,EAAE,OAAO,CAAA;IACxB,QAAQ,EAAE,MAAM,CAAA;CACjB;AAwCD,eAAO,MAAM,IAAI,GAAI,uDAKlB,QAAQ,mDASD,CAAA"}

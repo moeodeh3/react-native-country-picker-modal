@@ -54,6 +54,7 @@ const CountryModal = ({
     if (disableNativeModal) {
       teleport(jsxRuntime.jsx(AnimatedModal.AnimatedModal, {
         ...props,
+        visible: true,
         children: content
       }));
     }

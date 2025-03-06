@@ -34,6 +34,7 @@ var CountryModal = function CountryModal(_ref) {
   React.useEffect(function () {
     if (disableNativeModal) {
       teleport(jsx(AnimatedModal, _objectSpread2(_objectSpread2({}, props), {}, {
+        visible: true,
         children: content
       })));
     }
